@@ -9,3 +9,8 @@ export async function getHealth() {
   const response = await api.get("/api/health");
   return response.data;
 }
+
+export async function getDatabaseHealth() {
+  const response = await api.get("/api/health/database");
+  return response.data;
+}

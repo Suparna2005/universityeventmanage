@@ -1,6 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import RedirectResponse
+from fastapi.responses import JSONResponse
 from sqlalchemy.exc import SQLAlchemyError
 
 from app.core.config import settings
@@ -29,6 +30,21 @@ def health() -> dict[str, str]:
     except SQLAlchemyError:
         return {"status": "degraded", "database": "unavailable"}
     return {"status": "ok", "database": "connected"}
+
+
+@app.get("/api/health/database")
+def database_health() -> JSONResponse:
+    try:
+        check_database_connection()
+    except SQLAlchemyError:
+        return JSONResponse(
+            status_code=503,
+            content={"status": "error", "message": "PostgreSQL is unavailable"},
+        )
+    return JSONResponse(
+        status_code=200,
+        content={"status": "success", "message": "PostgreSQL is connected"},
+    )
 
 
 from app.api import router
