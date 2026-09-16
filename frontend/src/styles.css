@@ -1,0 +1,35 @@
+:root {
+  font-family: Georgia, "Times New Roman", serif;
+  color: #17211b;
+  background: #e8eee7;
+  font-synthesis: none;
+}
+
+* { box-sizing: border-box; }
+
+body { margin: 0; min-width: 320px; }
+
+.shell { min-height: 100vh; padding: 24px clamp(24px, 6vw, 90px) 70px; background: radial-gradient(circle at 15% 10%, #f8faf4 0, transparent 34%), #dbe7dc; }
+.nav { max-width: 1280px; margin: auto; display: flex; align-items: center; gap: 14px; font: 700 .84rem/1.2 system-ui, sans-serif; color: #36513d; }
+.nav strong { display: grid; place-items: center; width: 38px; height: 38px; background: #203728; color: #fffdf7; border-radius: 50%; }
+.nav-link { margin-left: auto; font-weight: 500; color: #718176; }
+.hero { max-width: 1280px; margin: 13vh auto 16vh; display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(260px, .6fr); gap: clamp(36px, 8vw, 130px); align-items: end; }
+
+.signal, .features article { background: #fffdf7; border: 1px solid #c8d4c8; }
+.signal { padding: 28px; box-shadow: 8px 8px 0 #b6c9b9; }
+
+.eyebrow { margin: 0 0 20px; color: #56745b; font: 700 0.78rem/1.2 system-ui, sans-serif; letter-spacing: 0.12em; text-transform: uppercase; }
+h1 { max-width: 800px; margin: 0; font-size: clamp(2.7rem, 8vw, 6.6rem); line-height: .92; font-weight: 500; }
+.lede { max-width: 570px; margin: 32px 0; color: #536156; font: 1.15rem/1.5 system-ui, sans-serif; }
+.actions { display: flex; align-items: center; gap: 24px; font: 700 .9rem system-ui, sans-serif; }
+button { border: 0; padding: 14px 20px; background: #203728; color: #fffdf7; font: inherit; cursor: pointer; }
+.actions a { color: #36513d; }
+.signal-dot { width: 14px; height: 14px; border-radius: 50%; background: #b77b35; }
+.signal-dot.ready { background: #2f7d4a; }
+.signal h2 { margin: 16px 0 8px; font-size: 1.7rem; font-weight: 500; }
+.signal p:last-child, .features p { color: #667369; font: .95rem/1.5 system-ui, sans-serif; }
+.features { max-width: 1280px; margin: auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.features article { padding: 24px; min-height: 180px; }
+.features b { color: #b77b35; font: .78rem system-ui, sans-serif; }
+.features h2 { margin: 32px 0 6px; font-size: 1.6rem; font-weight: 500; }
+@media (max-width: 760px) { .nav-link { display: none; } .hero { grid-template-columns: 1fr; margin: 10vh auto 12vh; } .features { grid-template-columns: 1fr; } }
