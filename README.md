@@ -34,9 +34,9 @@ npm run dev
 
 The frontend is available at http://localhost:5173.
 
-### PostgreSQL
+### Database
 
-Create a database and user matching `backend/.env`, or change `DATABASE_URL` to your local PostgreSQL connection string. The health endpoint reports `degraded` until PostgreSQL is reachable.
+SQLite is the default development database and requires no server. Run `python scripts/seed_data.py` from `backend` to create the synthetic database. PostgreSQL is also supported by changing `DATABASE_URL` in `backend/.env` to a PostgreSQL connection string.
 
 ### Checks
 

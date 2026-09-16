@@ -7,6 +7,7 @@ __pycache__/
 # Environment and generated data
 .env
 *.sqlite3
+*.db
 backend/uploads/
 backend/generated_certificates/
 

@@ -43,7 +43,10 @@ def database_health() -> JSONResponse:
         )
     return JSONResponse(
         status_code=200,
-        content={"status": "success", "message": "PostgreSQL is connected"},
+        content={
+            "status": "success",
+            "message": "SQLite is connected" if settings.database_url.startswith("sqlite") else "PostgreSQL is connected",
+        },
     )
 
 

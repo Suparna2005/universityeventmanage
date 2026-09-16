@@ -6,7 +6,7 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 class Settings(BaseSettings):
     app_name: str = "University Event Platform"
     environment: str = "development"
-    database_url: str = "postgresql+psycopg://postgres:CHANGE_ME@localhost:5432/university_event_db"
+    database_url: str = "sqlite:///./university_event.db"
     frontend_url: str = "http://localhost:5173"
     jwt_secret: str = "change-this-development-secret"
     jwt_expire_minutes: int = 60
